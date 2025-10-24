@@ -1,3 +1,13 @@
+git clone https://github.com/Web4application/Brain.git
+cd Brain
+
+git clone https://github.com/Web4application/EDQ-AI.git
+cd EDQ-AI
+
+git clone https://github.com/Web4application/SERAI.git
+cd SERAI
+
+
 +-------------------+
 |   Arduino Board   |
 |-------------------|
