@@ -1,3 +1,27 @@
+
+                 ┌──────────────┐
+                 │  Sensory     │  ← Camera, LiDAR, IMU, Distance, Touch
+                 │  Cortex      │
+                 └──────┬───────┘
+                        │ Preprocessed Sensor Data
+                        ▼
+                 ┌──────────────┐
+                 │ Decision     │  ← ANN / DQN / PPO / LSTM / SNN
+                 │ Module       │
+                 └──────┬───────┘
+                        │ Action Selection
+                        ▼
+                 ┌──────────────┐
+                 │ Motor Cortex │  ← Converts actions to motor commands
+                 └──────┬───────┘
+                        │
+        ┌───────────────┴───────────────┐
+        ▼                               ▼
+  Wheels / Motors                 Servo Arms / Grippers
+  LED Feedback / Sounds           Optional Drone Propellers
+
+
+
 <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/434924d0-570c-4c38-adb1-22381e720655" />|
 
 ---
