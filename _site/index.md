@@ -1,5 +1,6 @@
-## **BRAIN
-
+|
+## BRAIN
+|
 
 
                  ┌──────────────┐
@@ -699,6 +700,7 @@ zip -r Neurobot.zip Neurobot/
 
 pre-filled SLAM map + example 3-Neurobot swarm configuration** 
 
+---
 
 
 
