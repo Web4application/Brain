@@ -6,6 +6,20 @@ ros2 launch rtabmap_ros rtabmap.launch.py \
     scan_topic:=/lidar
 
 
+Neurobot/
+├── ros2/
+│   ├── launch/
+│   │   └── neurobot_slam.launch.py       # Launch SLAM + sensors
+│   ├── nodes/
+│   │   ├── lidar_node.py                 # LiDAR publisher
+│   │   ├── imu_node.py                   # IMU publisher
+│   │   ├── camera_node.py                # Camera publisher
+│   │   └── motor_node.py                 # Subscribes commands, controls motors
+│   ├── maps/
+│   │   └── saved_maps/                   # Store generated 3D maps
+│   └── swarm_node.py                      # MQTT/ROS2 topic for swarm coordination
+
+
 git clone https://github.com/Web4application/Brain.git
 cd Brain
 
