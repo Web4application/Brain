@@ -1,3 +1,11 @@
+sudo apt install ros-<ros2-distro>-rtabmap-ros
+
+ros2 launch rtabmap_ros rtabmap.launch.py \
+    rgb_topic:=/camera/color/image_raw \
+    depth_topic:=/camera/depth/image_raw \
+    scan_topic:=/lidar
+
+
 git clone https://github.com/Web4application/Brain.git
 cd Brain
 
