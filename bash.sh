@@ -1,3 +1,7 @@
+pip install --upgrade truss 'pydantic>=2.0.0'
+
+$ truss push
+
 sudo apt install ros-<ros2-distro>-rtabmap-ros
 
 ros2 launch rtabmap_ros rtabmap.launch.py \
@@ -5,6 +9,21 @@ ros2 launch rtabmap_ros rtabmap.launch.py \
     depth_topic:=/camera/depth/image_raw \
     scan_topic:=/lidar
 
+$ truss init hello-world
+? 📦 Name this model: HelloWorld
+Truss HelloWorld was created in ~/hello-world
+
+
+curl https://pyenv.run | bash
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
+echo '[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(pyenv init -)"' >> ~/.bashrc
+source ~/.bashrc
+pyenv install 3.11.0
+ENV_NAME="truss_env"
+pyenv virtualenv 3.11.0 $ENV_NAME
+pyenv activate $ENV_NAME
+pip install --upgrade truss 'pydantic>=2.0.0'
 
 Neurobot/
 ├── ros2/
