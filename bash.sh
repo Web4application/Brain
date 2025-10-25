@@ -1,3 +1,32 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+PYTHON=python3
+VENV_DIR=.venv
+
+echo "Creating virtualenv ${VENV_DIR}..."
+${PYTHON} -m venv ${VENV_DIR}
+source ${VENV_DIR}/bin/activate
+
+pip install --upgrade pip setuptools wheel
+echo "Installing pip packages from requirements.txt..."
+pip install -r requirements.txt || {
+  echo "pip install failed; check for missing system packages. See apt-get suggestions below."
+  exit 1
+}
+
+echo "Installing CPU PyTorch wheel (adjust for CUDA/Jetson as needed)..."
+pip install --no-deps torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu || true
+
+echo
+echo "Done. Activate the environment: source ${VENV_DIR}/bin/activate"
+echo
+echo "Apt packages you may need on Ubuntu:"
+echo "  sudo apt-get update && sudo apt-get install -y build-essential cmake libssl-dev libffi-dev python3-dev ffmpeg libglib2.0-0"
+echo
+echo "ROS2: install rclpy and message packages via apt on Ubuntu/ROS images (do not pip install rclpy)."
+echo "Jetson: install JetPack and Jetson-compatible PyTorch wheel per NVIDIA docs."
+
 pip install --upgrade truss 'pydantic>=2.0.0'
 
 $ truss push
