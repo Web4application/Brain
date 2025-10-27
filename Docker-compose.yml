@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  lucee:
+    image: lucee/lucee:latest
+    container_name: lucee_brain
+    ports:
+      - "8500:8080"
+    volumes:
+      - ./cfml:/var/www
+    environment:
+      - LUCEE_PASSWORD=admin
+      - LUCEE_SERVER_ADMIN=enabled
+      - LUCEE_WEB_ADMIN=enabled
+    restart: always
+
+  brain_core:
+    build:
+      context: ./python
+    command: python ai_core.py
+    volumes:
+      - ./python:/app
+    working_dir: /app
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: always
+Server Admin: http://localhost:8500/lucee/admin/server.cfm
+	•	Web Admin: http://localhost:8500/lucee/admin/web.cfm
