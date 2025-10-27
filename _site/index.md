@@ -4,7 +4,6 @@
 
 ---
 
-
                  ┌──────────────┐
                  │  Sensory     │  ← Camera, LiDAR, IMU, Distance, Touch
                  │  Cortex      │
@@ -469,9 +468,26 @@ Neurobot/
 ├── main.py
 ├── requirements.txt
 └── README.md
-```
-
 ---
+ 
+Brain/
+├── cfml/
+│   ├── Application.cfc
+│   ├── index.cfm
+│   ├── api/
+│   │   └── routes.cfm
+│   ├── components/
+│   │   └── orchestrator.cfc
+│   └── utils/
+│       ├── db.cfc
+│       ├── json.cfc
+│       └── env.cfc
+├── python/
+│   ├── ai_core.py
+│   └── requirements.txt
+├── docker-compose.yml
+└── README.md
+```
 
 ### **1️⃣ Arduino: `arduino/motor_control.ino`**
 
