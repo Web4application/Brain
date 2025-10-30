@@ -44,6 +44,20 @@ $ truss init hello-world
 ? 📦 Name this model: HelloWorld
 Truss HelloWorld was created in ~/hello-world
 
+`
+touch Brain/README.md Brain/LICENSE Brain/pyproject.toml Brain/requirements.txt
+touch Brain/config/default.yaml
+touch Brain/brain/__init__.py
+touch Brain/brain/sensors/__init__.py Brain/brain/sensors/lidar.py Brain/brain/sensors/camera.py Brain/brain/sensors/mock_sensors.py
+touch Brain/brain/models/__init__.py Brain/brain/models/snn_model.py Brain/brain/models/ann_model.py
+touch Brain/brain/swarm/__init__.py Brain/brain/swarm/swarm_manager.py
+touch Brain/brain/actuators/__init__.py Brain/brain/actuators/motor_controller.py
+touch Brain/brain/utils/__init__.py Brain/brain/utils/helpers.py
+touch Brain/examples/run_lidar_example.py Brain/examples/run_snn_example.py
+touch Brain/tests/test_sensors.py Brain/tests/test_models.py Brain/tests/test_swarm.py
+touch Brain/docker/Dockerfile
+touch Brain/scripts/run_simulation.py
+’
 
 curl https://pyenv.run | bash
 echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
@@ -55,7 +69,7 @@ ENV_NAME="truss_env"
 pyenv virtualenv 3.11.0 $ENV_NAME
 pyenv activate $ENV_NAME
 pip install --upgrade truss 'pydantic>=2.0.0'
-
+```
 Neurobot/
 ├── ros2/
 │   ├── launch/
