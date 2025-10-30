@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+
+# On Windows, try "python -m http.server" or "py -3 -m http.server"
+python3 -m http.server
+
 ```cpp
 
 PYTHON=python3
@@ -147,3 +151,26 @@ mkdir -p Brain/examples
 mkdir -p Brain/tests
 mkdir -p Brain/docker
 mkdir -p Brain/scripts    
+
+python -V
+# If the above fails, try:
+python3 -V
+# Or, if the "py" command is available, try:
+py -3 -V
+
+npx http-server /path/to/project -o -p 9999
+
+# Download and install nvm:
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+
+# in lieu of restarting the shell
+\. "$HOME/.nvm/nvm.sh"
+
+# Download and install Node.js:
+nvm install 24
+
+# Verify the Node.js version:
+node -v # Should print "v24.11.0".
+
+# Verify npm version:
+npm -v # Should print "11.6.1".
