@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+```cpp
+
 PYTHON=python3
 VENV_DIR=.venv
 
