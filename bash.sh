@@ -120,3 +120,14 @@ cd SERAI
           │
           ▼
       Real World
+
+  mkdir -p Brain/config
+mkdir -p Brain/brain/sensors
+mkdir -p Brain/brain/models
+mkdir -p Brain/brain/swarm
+mkdir -p Brain/brain/actuators
+mkdir -p Brain/brain/utils
+mkdir -p Brain/examples
+mkdir -p Brain/tests
+mkdir -p Brain/docker
+mkdir -p Brain/scripts    
