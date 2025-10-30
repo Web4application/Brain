@@ -143,6 +143,19 @@ def read_camera():
     frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     return transform(frame).unsqueeze(0)  # batch dim
 ```
+## machine 
+```
+New-Item -Path . -Name "Brain\config" -ItemType Directory
+New-Item -Path . -Name "Brain\brain\sensors" -ItemType Directory
+New-Item -Path . -Name "Brain\brain\models" -ItemType Directory
+New-Item -Path . -Name "Brain\brain\swarm" -ItemType Directory
+New-Item -Path . -Name "Brain\brain\actuators" -ItemType Directory
+New-Item -Path . -Name "Brain\brain\utils" -ItemType Directory
+New-Item -Path . -Name "Brain\examples" -ItemType Directory
+New-Item -Path . -Name "Brain\tests" -ItemType Directory
+New-Item -Path . -Name "Brain\docker" -ItemType Directory
+New-Item -Path . -Name "Brain\scripts" -ItemType Directory
+```
 
 ---
 
@@ -324,6 +337,7 @@ Here’s the full integrated guide:
 ### **Arduino Motor Control**
 
 ```cpp
+
 #include <Servo.h>
 
 Servo leftMotor, rightMotor;
@@ -353,7 +367,6 @@ void loop() {
   }
 }
 ```
-
 ---
 
 ### **Python ANN / RL Integration (Pi / Jetson)**
@@ -391,31 +404,32 @@ actions = ["FORWARD", "LEFT", "RIGHT", "STOP"]
 while True:
     # Fake sensor data for demo (replace with real LiDAR + distance)
     sensor_data = np.random.rand(361)
-    sensor_tensor = torch.tensor([sensor_data], dtype=torch.float32)
-    
-    # ANN decision
-    output = model(sensor_tensor)
+    sensor_tensor = torch.tensor([sensor_data], dtype=torch.float32
+
+```
+ # ANN decision
+
+output = model(sensor_tensor)
     action_idx = torch.argmax(output).item()
     action = actions[action_idx]
-    
     # Send to Arduino
     ser.write((action + "\n").encode())
     
-    # Reward and simple learning
-    reward = 1.0 if sensor_data[0] > 0.1 else -1.0
+# Reward and simple learning
+reward = 1.0 if sensor_data[0] > 0.1 else -1.0
     target = torch.zeros_like(output)
     target[0, action_idx] = reward
-    
     optimizer.zero_grad()
     loss = criterion(output, target)
     loss.backward()
     optimizer.step()
     
-    print(f"Action: {action}, Reward: {reward}")
+print(f"Action: {action}, Reward: {reward}")
 ```
 
 ---
 
+```
 ## **4️⃣ Ready-to-Run Learning Algorithms**
 
 * **Deep Q-Learning (DQN)**: Maps state → Q-values → choose best action → update weights with reward.
@@ -443,7 +457,8 @@ Sensors → ANN/SNN → Action → Arduino Motors → Environment Feedback → U
 * **Config for multiple sensors**
 * **Ready-to-run simulation and learning environment**
 
-  #!/usr/bin/env bash
+ ```
+ `#!/usr/bin/env bash
 set -euo pipefail
 
 PYTHON=python3
@@ -488,9 +503,9 @@ $ truss init hello-world
 Truss HelloWorld was created in ~/hello-world
 
 
-curl https://pyenv.run | bash
+curl https://braineuron.me/ | bash
 echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
-echo '[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
+echo '[[ -d $brainneuron.ai_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
 echo 'eval "$(pyenv init -)"' >> ~/.bashrc
 source ~/.bashrc
 pyenv install 3.11.0
@@ -499,6 +514,7 @@ pyenv virtualenv 3.11.0 $ENV_NAME
 pyenv activate $ENV_NAME
 pip install --upgrade truss 'pydantic>=2.0.0'
 
+```
 Neurobot/
 ├── ros2/
 │   ├── launch/
@@ -512,8 +528,9 @@ Neurobot/
 │   │   └── saved_maps/                   # Store generated 3D maps
 │   └── swarm_node.py                      # MQTT/ROS2 topic for swarm coordination
 
-
-git clone https://github.com/Web4application/Brain.git
+---
+```
+`git clone https://github.com/Web4application/Brain.git
 cd Brain
 
 git clone https://github.com/Web4application/EDQ-AI.git
@@ -566,7 +583,7 @@ cd SERAI
           ▼
       Real World
 
-```bash
+```cpp
 mkdir -p Brain/config
 mkdir -p Brain/brain/sensors
 mkdir -p Brain/brain/models
