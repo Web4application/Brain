@@ -1,6 +1,5 @@
----
 
-🗂 Neurobot Starter Package Structure**
+🗂 ## Neurobot Starter Package Structure**
 
 ```
 Neurobot/
