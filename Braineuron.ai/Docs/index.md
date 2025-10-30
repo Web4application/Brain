@@ -1,10 +1,7 @@
 
-–––
-
        🗂  **Neurobot Starter Package Structure**
-
----
-         
+       
+```   
 Neurobot/
 │
 ├── arduino/
