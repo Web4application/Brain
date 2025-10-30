@@ -1,8 +1,6 @@
 
 
----
-
-# **🗂 Neurobot ROS2 + SLAM Module**
+ **🗂 Neurobot ROS2 + SLAM Module**
 
 ```
 Neurobot/
