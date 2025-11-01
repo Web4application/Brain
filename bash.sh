@@ -24,6 +24,14 @@ pip install -r requirements.txt || {
 echo "Installing CPU PyTorch wheel (adjust for CUDA/Jetson as needed)..."
 pip install --no-deps torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu || true
 
+pip install -r requirements.txt
+python train.py
+
+git clone https://github.com/Web4application/Brain.git
+cd Brain
+pip install -r requirements.txt
+python train_text.py
+
 echo
 echo "Done. Activate the environment: source ${VENV_DIR}/bin/activate"
 echo
