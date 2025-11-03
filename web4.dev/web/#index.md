@@ -1,4 +1,7 @@
-
+---
+tittle: page
+layouts: site
+---
 
                  ┌──────────────┐
                  │  Sensory     │  ← Camera, LiDAR, IMU, Distance, Touch
