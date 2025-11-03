@@ -1,7 +1,11 @@
-<h1>BRAIN</h1>
+---
+layouts: site
+tittle: VIRTUAL BRAIN ID
+head: 
+---
 
 
-------
+
 
 
 <h2>🧠 The Core  Engine </h2>
