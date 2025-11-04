@@ -40,7 +40,10 @@ services:
     volumes:
       - brain_db_data:/var/lib/postgresql/data
 
-volumes:
-  brain_db_data:
-Server Admin: http://localhost:8500/lucee/admin/server.cfm
-	•	Web Admin: http://localhost:8500/lucee/admin/web.cfm
+services:
+  backend:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
