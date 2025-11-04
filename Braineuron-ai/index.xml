@@ -1,11 +1,6 @@
----
 layouts: site
 tittle: VIRTUAL BRAIN ID
-head: 
----
-
-
-
+head: HOMEPAGE
 
 
 <h2>🧠 The Core  Engine </h2>
@@ -16,17 +11,16 @@ head:
 **Version:** 1.0.0  
 **License:** MIT  
 
----
 
 <p>
 	
-## 🧩 Overview
+- tittle: 🧩 Overview
+	- description: 
 **Brain** is a modular, Python-based AI engine designed to simulate cognitive reasoning, adaptive memory, and learning behavior.  
 It acts as the *core neural logic layer* for Web4 Application projects — powering analytics, automation, and intelligent decision-making.
 
 The architecture emphasizes scalability, modularity, and clean data flow — bridging human-like reasoning with machine-level precision.
 
----
 
 ## ⚙️ Features
 - 🧠 Adaptive reasoning engine  
@@ -36,21 +30,19 @@ The architecture emphasizes scalability, modularity, and clean data flow — bri
 - ⚡ Lightweight FastAPI interface (optional)  
 - 🧩 Extendable for Web4AI, RODAAI, and Fadaka Blockchain
 
----
 
-## 🚀 Installation
-
-
-git clone https://github.com/Web4application/Brain.git
-cd Brain
-python -m venv venv
-source venv/bin/activate  # (Windows: venv\Scripts\activate)
-pip install -r requirements.txt
+- tittle: 🚀 Installation
 
 
-⸻
+'git clone' 'https://github.com/Web4application/Brain.git
+cd Brain' 
+	
+'python -m venv venv'
+source venv/bin/activate  # (Windows: 'venv\Scripts\activate)'
+'pip install -r requirements.txt'
 
-🧰 Usage Example
+
+- tittle: 🧰 Usage Example
 
 from brain.core import BrainCore
 
@@ -78,14 +70,12 @@ brain/
 
 This project is licensed under the MIT License.
 © 2025 Seriki Yakub (KUBU LEE). All rights reserved.
-```
----
 
-## 🧩 **ARCHITECTURE.md**
-```markdown
+
+<p>🧩 **ARCHITECTURE.md**
+	
+
 # System Architecture — Brain AI Core
-
-```
 
 ## 🧠 Overview
 Brain is a cognitive framework organized around the principles of modular reasoning, data persistence, and adaptive learning.
@@ -141,8 +131,7 @@ Developers can extend the core with:
 ---
 
 
-<h2
- BRAIN
+<h3>BRAIN</h3>
 
 
                  ┌──────────────┐
