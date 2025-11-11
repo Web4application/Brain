@@ -1,7 +1,6 @@
 Flask App Builder
 =================
 
-
 .. image:: https://github.com/dpgaspar/Flask-AppBuilder/workflows/Python/badge.svg
         :target: https://github.com/dpgaspar/Flask-AppBuilder/actions
 
