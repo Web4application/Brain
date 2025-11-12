@@ -1,0 +1,2 @@
+docker build -t neomind_learning .
+docker run -p 5000:5000 neomind_learning
