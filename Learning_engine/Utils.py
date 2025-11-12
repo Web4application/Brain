@@ -81,3 +81,44 @@ def train_incremental(model, dataset):
     with open(METRICS_PATH, "w") as f:
         json.dump(metrics, f)
     return logs, metrics
+
+from sentence_transformers import SentenceTransformer
+import faiss
+import numpy as np
+import json, os
+
+MEMORY_DIR = "memory"
+EMBEDDING_DIM = 384
+os.makedirs(MEMORY_DIR, exist_ok=True)
+embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
+index_path = os.path.join(MEMORY_DIR, "embeddings.index")
+metadata_path = os.path.join(MEMORY_DIR, "metadata.json")
+
+# Initialize FAISS index
+if os.path.exists(index_path):
+    index = faiss.read_index(index_path)
+else:
+    index = faiss.IndexFlatL2(EMBEDDING_DIM)
+
+if os.path.exists(metadata_path):
+    with open(metadata_path, "r") as f:
+        metadata = json.load(f)
+else:
+    metadata = []
+
+def add_to_memory(texts, labels):
+    vectors = embedding_model.encode(texts, convert_to_numpy=True)
+    index.add(vectors)
+    metadata.extend([{"text": t, "label": l} for t, l in zip(texts, labels)])
+    faiss.write_index(index, index_path)
+    with open(metadata_path, "w") as f:
+        json.dump(metadata, f)
+
+def semantic_query(query, top_k=3):
+    vec = embedding_model.encode([query], convert_to_numpy=True)
+    D, I = index.search(vec, top_k)
+    results = []
+    for i in I[0]:
+        if i < len(metadata):
+            results.append(metadata[i])
+    return results
