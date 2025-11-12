@@ -79,3 +79,28 @@ def status():
 if __name__ == '__main__':
     print("[NeoMind] Starting Incremental Live Learning Server...")
     app.run(host='0.0.0.0', port=5000, debug=True)
+
+from utils import semantic_query, add_to_memory
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    input_data = request.get_json()
+    if not input_data or "text" not in input_data:
+        return jsonify({"error": "No text provided"}), 400
+
+    # Step 1: Run original classifier
+    vectorizer = model["vectorizer"]
+    classifier = model["classifier"]
+    label_encoder = model["label_encoder"]
+    X = vectorizer.transform([input_data["text"]])
+    y_pred = classifier.predict(X)
+    label = label_encoder.inverse_transform(y_pred)[0]
+
+    # Step 2: Run semantic retrieval
+    top_matches = semantic_query(input_data["text"])
+
+    # Step 3: Combine predictions (basic example: return both)
+    return jsonify({
+        "prediction": label,
+        "semantic_matches": top_matches
+    })
