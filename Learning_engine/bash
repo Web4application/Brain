@@ -1,2 +1,8 @@
 docker build -t neomind_learning .
 docker run -p 5000:5000 neomind_learning
+pip install sentence-transformers faiss-cpu
+
+learning_engine/
+├── memory/
+│   ├── embeddings.index  # FAISS index
+│   ├── metadata.json     # text → label mapping
