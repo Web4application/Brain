@@ -1,0 +1,1 @@
+Placeholder for system_architecture.png and neural_flowchart.png.
