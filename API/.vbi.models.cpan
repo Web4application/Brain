@@ -1,0 +1,28 @@
+class KM_sde(par)[source]
+Kuramoto model with noise (sde), C++ implementation.
+
+Parameters:
+pardict
+Dictionary of parameters.
+valid_parameters = ['G', 'dt', 'noise_amp', 'omega', 'weights', 'noise_seed', 'seed', 'alpha', 't_initial', 't_transition', 't_end', 'output', 'num_threads', 'initial_state', 'type']
+set_initial_state()[source]
+get_default_parameters()[source]
+check_parameters(par)[source]
+prepare_input()[source]
+run(par={}, x0=None, verbose=False)[source]
+Simulate the model.
+
+Parameters:
+pardict
+Dictionary of parameters.
+x0array
+Initial state.
+verbosebool
+Print simulation progress.
+Returns:
+dict
+tarray
+Time points.
+xarray
+State time series.
+set_initial_state(num_nodes, seed=None)[s
