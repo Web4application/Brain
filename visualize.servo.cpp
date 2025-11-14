@@ -28,7 +28,6 @@ Neurobot/
 ---
 
 # **1️⃣ Arduino Motor Control** (`arduino/motor_control.ino`)
-
 ```cpp
 #include <Servo.h>
 
