@@ -34,7 +34,30 @@ Refer to the [Quick Start Guide](guides/quick_start.md).
              ↓
          [Memory / DB]
              ↓
-     [Arduino / Output Layer]
+ [Arduino / Output Layer]
+
++--------------------------------+
+|  High-Level API / Pipeline     |  <-- users interact here
+|  - Multi-model orchestration   |
+|  - Parameter sweeps            |
+|  - Inference & fitting         |
+|  - Pre/post processing         |
++--------------------------------+
+|  Core Models                   |  <-- equations + observables
+|  - JR, JR_SDDE, MPR, KM, WC    |
+|  - VEP                          |
+|  - Neural population + network |
++--------------------------------+
+|  Integrators / Solvers         |  <-- Heun, Euler, Milstein
+|  - Deterministic & stochastic |
+|  - Adaptive step sizing         |
+|  - GPU/CPU/C++ compatible      |
++--------------------------------+
+|  Engine Abstraction Layer      |  <-- hardware independence
+|  - NumPy, CuPy, JAX, Torch, C++|
+|  - Auto-dtype, multi-sim       |
+|  - Device transfer utilities   |
++--------------------------------+
 ```
 
 ## Contributing
