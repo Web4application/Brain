@@ -2,7 +2,6 @@ echo "Creating dev and test branches..."
 git checkout -b dev  
 git checkout -b test  
  git checkout main
-
 echo "Initializing git repository..."  
 git init  
 git add .  
