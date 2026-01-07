@@ -1,4 +1,4 @@
-[Arduino Sensors & Actuators]
+ [Arduino Sensors & Actuators]
    - Motors, LEDs, Cameras, LiDAR, Environmental Sensors
    ↓
 [EDQ AI Layer]
